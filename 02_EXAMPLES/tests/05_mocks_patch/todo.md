@@ -1,0 +1,1 @@
+https://www.inspiredpython.com/article/five-advanced-pytest-fixture-patterns
