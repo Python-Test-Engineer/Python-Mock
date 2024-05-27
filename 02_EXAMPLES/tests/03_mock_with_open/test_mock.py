@@ -1,4 +1,5 @@
 """Mock ope"""
+
 from unittest import mock
 
 
@@ -13,6 +14,7 @@ builtin_open = open  # save the unpatched version
 
 def mock_open(*args, **kwargs):
     """docstring"""
+    # args[0] is the path argument in fn do_open
     if args[0] == "foo":
         # mocked open for path "foo"
         return mock.mock_open(read_data="bar")(*args, **kwargs)

@@ -67,7 +67,7 @@ print(
         title="=== Path ===",
         subtitle="=== Path ===",
         subtitle_alignment="left",
-        color="blue",
+        color="yellow",
         padding=1,
     )
 )

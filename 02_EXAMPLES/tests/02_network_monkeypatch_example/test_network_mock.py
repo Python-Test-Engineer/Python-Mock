@@ -12,6 +12,6 @@ def test_api_calls_gets_result(monkeypatch):
     mock_result.timout = 10
     mock_get = MagicMock(return_value=mock_result)
     monkeypatch.setattr("requests.get", mock_get)
-    result = get_url("http://www.cnn.com", timeout=10)
-    mock_get.assert_called_once_with("http://www.cnn.com", timeout=10)
+    result = get_url("https://randomuser.me/api/", timeout=10)
+    mock_get.assert_called_once_with("https://randomuser.me/api/", timeout=10)
     assert result.text == "Hello World"
