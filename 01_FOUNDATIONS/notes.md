@@ -5,3 +5,6 @@
 -  ### importing entire modules creates references to the module cache in the local namespace
 -  ### objects of modules (variables, functions, classes) are directly added to the current namespace when imported
 -  ### local and global namespaces as well as the module cache are also just mutable plain dictionaries
+
+
+YT mock three ways https://www.youtube.com/watch?v=WFRljVPHrkE  vgood
