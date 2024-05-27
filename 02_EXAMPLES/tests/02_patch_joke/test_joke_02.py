@@ -1,4 +1,5 @@
 """Test joke2 for Exceptions"""
+
 import unittest
 from unittest.mock import MagicMock, patch
 
@@ -6,22 +7,22 @@ import pytest
 import requests.exceptions
 from requests.exceptions import Timeout
 
-from src.joke_mock_02.api_joke2 import get_joke2
-from src.joke_mock_02.joke2 import len_joke2
+from api_joke2 import get_joke2
+from joke2 import len_joke2
 
 
 class TestJoke(unittest.TestCase):
     """Test joke"""
 
     @pytest.mark.joke_mocks
-    @patch("src.joke_mock_02.joke2.get_joke2")
+    @patch("joke2.get_joke2")
     def test_len_joke2(self, mock_get_joke) -> None:
         """get len test"""
         mock_get_joke.return_value = "one"
         self.assertEqual(len_joke2(), 3)
 
     @pytest.mark.joke_mocks
-    @patch("src.joke_mock_02.api_joke2.requests")
+    @patch("api_joke2.requests")
     def test_get_joke2(self, mock_requests):
         """mocking requests"""
         mock_response = MagicMock()
@@ -32,7 +33,7 @@ class TestJoke(unittest.TestCase):
         # self.assertEqual(mock_response.status_code , 200)
 
     @pytest.mark.joke_mocks
-    @patch("src.joke_mock_02.api_joke2.requests")
+    @patch("api_joke2.requests")
     def test_fail_get_joke(self, mock_requests):
         """mocking requests"""
         mock_response = MagicMock()
@@ -43,7 +44,7 @@ class TestJoke(unittest.TestCase):
         # self.assertEqual(mock_response.status_code , 200)
 
     @pytest.mark.joke_mocks
-    @patch("src.joke_mock_02.api_joke2.requests")
+    @patch("api_joke2.requests")
     def test_get_joke_timeout_exception(self, mock_requests):
         """mocking requests"""
         mock_requests.exceptions = requests.exceptions

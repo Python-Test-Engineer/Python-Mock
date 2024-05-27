@@ -1,7 +1,7 @@
 """Joke"""
 
 
-from src.joke_mock_01.api_joke import get_joke
+from api_joke import get_joke
 
 
 def len_joke() -> int:
