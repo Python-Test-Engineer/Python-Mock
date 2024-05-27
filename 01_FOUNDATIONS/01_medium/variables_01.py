@@ -10,4 +10,9 @@ class Car:
     cost = 2000
 
 
-console.print("cost of car", Car.cost)  # prints 2000
+console.print(
+    f"\n\n\t[red]In variables.py {Car.cost}[/]\n\n",
+)
+
+# if __name__ == "__main__":
+#     console.print("cost of car", Car.cost)  # prints 2000
