@@ -6,29 +6,32 @@ console = Console()
 
 
 def real_full_name(first, last):
-    return f"real_full_name(): {first} {last}"
+    return f"[green]real_full_name()[/] being used => {first} {last}"
 
 
 def fake_full_name(first, last):
-    return f"fake_full_name(): {first} {last}"
+    return f"[red]FAKE_FULL_NAME()[/] being used => {first} {last}"
 
 
-hex_id_real = hex(id(real_full_name))[-6:]
-hex_id_fake = hex(id(fake_full_name))[-6:]
-
-print(f"id of real_full_name: {hex_id_real}")
-print(real_full_name("John", "Doe"))
-print(f"id of fake_full_name: {hex_id_fake}")
-print(fake_full_name("FakeFirst", "FakeLast "))
-print("--------------------")
+hex_id_real = hex(id(real_full_name))[-3:]
+hex_id_fake = hex(id(fake_full_name))[-3:]
+console.print("\n")
+console.print(f"id of real_full_name: [green]{hex_id_real}[/]")
+# console.pring outputs differently
+console.print(real_full_name("John", "Doe"))
+console.print(f"id of fake_full_name: [red]{hex_id_fake}[/]")
+console.print(fake_full_name("FakeFirst", "FakeLast "))
+console.print("--------------------")
 
 # monkey patch
 real_full_name = fake_full_name
-print(f"id of real_full_name is now: {hex(id(real_full_name))[-6:]}")
-# now it's fake - real_full_name("Sally", "Jane"))
+console.print("Monkeypatching...")
+console.print(f"id of real_full_name is now: [red]{hex(id(real_full_name))[-3:]}[/]")
+# now it's fake - real_full_name("FakeFirst", "FakeLast"))
 
-output = f"Calling real_full_name using {hex(id(real_full_name))[-6:]}"
-output += f"but hex_fake_id is {hex_id_fake}: \n\t{real_full_name('MonkeyPatchedFirst', 'MonkeyPatchedLast')}"
-print(
-    f"Calling real_full_name using {hex(id(real_full_name))[-6:]} but hex_fake_id is {hex_id_fake}: \n\t{real_full_name('MonkeyPatchedFirst', 'MonkeyPatchedLast')}"
+
+console.print(
+    "Calling (patched) [green]real_full_name('Jane', 'Allen')[/] and we get:",
+    real_full_name("Jane", "Allen"),
 )
+console.print("\n")
