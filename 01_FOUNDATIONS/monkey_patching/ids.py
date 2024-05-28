@@ -1,3 +1,10 @@
+from pyboxen import boxen
+
+from rich.console import Console
+
+console = Console()
+
+
 def real_full_name(first, last):
     return f"real_full_name(): {first} {last}"
 
@@ -19,6 +26,9 @@ print("--------------------")
 real_full_name = fake_full_name
 print(f"id of real_full_name is now: {hex(id(real_full_name))[-6:]}")
 # now it's fake - real_full_name("Sally", "Jane"))
+
+output = f"Calling real_full_name using {hex(id(real_full_name))[-6:]}"
+output += f"but hex_fake_id is {hex_id_fake}: \n\t{real_full_name('MonkeyPatchedFirst', 'MonkeyPatchedLast')}"
 print(
     f"Calling real_full_name using {hex(id(real_full_name))[-6:]} but hex_fake_id is {hex_id_fake}: \n\t{real_full_name('MonkeyPatchedFirst', 'MonkeyPatchedLast')}"
 )
