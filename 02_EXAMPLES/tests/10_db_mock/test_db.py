@@ -7,8 +7,10 @@ from db import process_data_from_db
 class TestProcessDataFromDB(unittest.TestCase):
     @patch("db.fetch_data_from_db")  # Patch the correct function
     def test_process_data_from_db(self, mock_fetch_data):
+        # intercept fetch_data_from_db() and use 5 as the return value
         mock_fetch_data.return_value = 5
-        result = process_data_from_db()  # Call the correct function
+        # When we call process_data_from_db() it should return 10 as it double fetch_data_from_db() return value
+        result = process_data_from_db()
         self.assertEqual(result, 10)
 
 
