@@ -1,4 +1,10 @@
 {
+   "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+   },
+   "editor.hover.enabled": false,
    "terminal.integrated.fontSize": 20,
    "python.terminal.activateEnvironment": true,
    "editor.renderLineHighlight": "all",
