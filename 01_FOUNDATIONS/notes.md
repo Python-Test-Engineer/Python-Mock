@@ -8,3 +8,8 @@
 
 
 YT mock three ways https://www.youtube.com/watch?v=WFRljVPHrkE  vgood
+
+https://github.com/evandekieft-zz/python-mock-examples/tree/master good tutorial
+
+https://github.com/chase-seibert/python-mocking
+
