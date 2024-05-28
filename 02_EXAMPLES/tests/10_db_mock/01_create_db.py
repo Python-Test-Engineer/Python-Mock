@@ -25,7 +25,7 @@ def create_table(con):
     try:
         cur = con.cursor()
         cur.execute(
-            """CREATE TABLE employees(
+            """CREATE TABLE IF NOT EXISTS employees(
         id INTEGER PRIMARY KEY,
         name TEXT,
         surname TEXT,
