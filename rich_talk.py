@@ -95,7 +95,7 @@ panels = [
 
 for panel in panels:
     console.print(panel, justify="center")
-    input("Press Enter to continue...")
+    # input("Press Enter to continue...")
 
 
 # thank_you_title = pyfiglet.figlet_format("Thank You", font="slant")
