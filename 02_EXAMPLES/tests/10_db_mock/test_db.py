@@ -1,7 +1,7 @@
 # db.py
 import unittest
 from unittest.mock import patch
-from db import process_data_from_db
+from db import double_data
 
 
 class TestProcessDataFromDB(unittest.TestCase):
@@ -10,7 +10,7 @@ class TestProcessDataFromDB(unittest.TestCase):
         # intercept fetch_data_from_db() and use 5 as the return value
         mock_fetch_data.return_value = 5
         # When we call process_data_from_db() it should return 10 as it double fetch_data_from_db() return value
-        result = process_data_from_db()
+        result = double_data()
         self.assertEqual(result, 10)
 
 

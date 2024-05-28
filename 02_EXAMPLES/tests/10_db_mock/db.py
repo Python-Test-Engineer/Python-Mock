@@ -18,7 +18,7 @@ def fetch_data_from_db():
     return data[0] if data else None
 
 
-def process_data_from_db():
+def double_data():
     data = fetch_data_from_db()
     if data is not None:
         # Process the data and return the result (multiply by 2 in this example)
