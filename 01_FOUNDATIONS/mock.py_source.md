@@ -14,8 +14,14 @@ https://github.com/python/cpython/blob/main/Lib/unittest/mock.py
 
 ## 927 assert_not_called
 
+# 1247 class Mock(CallableMixin, NonCallableMock):
+
 ## 1634 start stop
 
 ## 1740 patch
 
 ## 2196 MagicMock
+
+# 2707 autospec
+
+# 2918 mock_open
