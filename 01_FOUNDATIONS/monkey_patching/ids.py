@@ -24,7 +24,7 @@ console.print(f"id of fake_full_name: [red]{hex_id_fake}[/]")
 console.print(FAKE_FULL_NAME("FakeFirst", "FakeLast "))
 console.print("\n--------------------\n")
 
-# monkey patch
+# monkeypatch
 real_full_name = FAKE_FULL_NAME
 console.print("[blue bold]Monkeypatching...[/]\n")
 console.print(f"real_full_name now points to: [red]{hex(id(real_full_name))[-3:]}[/]")
