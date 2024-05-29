@@ -46,6 +46,10 @@ def patched_imported_foo_from_mymodule():
     console.print("Patched: [red]imported_foo_from_mymodule foo() output...[/red]\n")
 
 
+# monkeypatch imported_foo_from_mymodule()
 imported_foo_from_mymodule = patched_imported_foo_from_mymodule
 
 patched_imported_foo_from_mymodule()
+
+# note how id of imported_foo_from_mymodule has changed and has the id of patched_imported_foo_from_mymodule()
+console.print(globals())
