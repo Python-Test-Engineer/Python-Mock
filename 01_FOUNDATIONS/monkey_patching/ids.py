@@ -1,5 +1,5 @@
-from pyboxen import boxen
-
+# import foo to see where the refernce to it is stored...
+from mymodule import foo as imported_foo_from_mymodule
 from rich.console import Console
 
 console = Console()
@@ -35,3 +35,17 @@ console.print(
     real_full_name("Jane", "Allen"),
 )
 console.print("\n")
+
+console.print(globals())
+imported_foo_from_mymodule()
+
+console.print("Monkeypatching imported_foo_from_mymodule\n")
+
+
+def patched_imported_foo_from_mymodule():
+    console.print("Patched: [red]imported_foo_from_mymodule foo() output...[/red]\n")
+
+
+imported_foo_from_mymodule = patched_imported_foo_from_mymodule
+
+patched_imported_foo_from_mymodule()
