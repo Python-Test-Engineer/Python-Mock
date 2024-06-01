@@ -13,7 +13,7 @@ def foo():
     import urllib  # import module urllib to local namespace
 
     LOCALVAR = 2
-    print("=== locals ===")
+    print("=== locals ===\n")
     output = str(locals())
 
     print(
