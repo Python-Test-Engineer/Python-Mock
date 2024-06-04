@@ -1,10 +1,10 @@
 from unittest.mock import patch
-from pyboxen import boxen
+# from pyboxen import boxen
+
+from variables_03 import Car  # importing Car class from variables file
 from rich.console import Console
 
 console = Console()
-
-from variables_03 import Car  # importing Car class from variables file
 
 console.print(globals()["Car"].__dict__)
 
