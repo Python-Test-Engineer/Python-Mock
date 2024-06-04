@@ -1,4 +1,4 @@
-class Prod(object):
+class Prod:
     def __init__(self):
         self.database = "prod.db"
 
@@ -6,7 +6,7 @@ class Prod(object):
         return f"connection: {self.database}"
 
 
-class MockProd(object):
+class MockProd:
     call_count = 0
 
     def __init__(self):
