@@ -15,14 +15,20 @@ from src.joke import len_joke
 class TestJoke(unittest.TestCase):
     """Test joke"""
 
+    def test_0100_no_patch(self):
+        """no patch"""
+        joke = get_joke()
+        console.print("\n->[yellow]0100 not patched[/]", joke)
+        self.assertEqual(3, 3)
+
     @patch("src.joke.get_joke")
-    def test_0120_len_joke(self, mock_get_joke) -> None:
+    def test_0200_len_joke(self, mock_get_joke) -> None:
         """get len test"""
         mock_get_joke.return_value = "one"
         self.assertEqual(len_joke(), 3)
 
     @patch("src.api_joke.requests")
-    def test_0121_get_joke(self, mock_requests):
+    def test_0300_get_joke(self, mock_requests):
         """mocking requests"""
         mock_response = MagicMock()
         mock_response.status_code = 200
@@ -33,7 +39,7 @@ class TestJoke(unittest.TestCase):
         assert mock_response.status_code == 200
 
     @patch("src.api_joke.requests")
-    def test_0122_fail_get_joke(self, mock_requests):
+    def test_0400_fail_get_joke(self, mock_requests):
         """mocking requests"""
         mock_response = MagicMock()
         mock_response.status_code = 403

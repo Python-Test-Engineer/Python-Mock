@@ -10,6 +10,7 @@ from .api_joke import get_joke
 def len_joke() -> int:
     """get length"""
     # This is where get_joke() is called
+
     the_joke = get_joke()
-    print("in joke.py")
+    console.print("\n\t[blue]in joke.py[/]", the_joke, len(the_joke))
     return len(the_joke)
