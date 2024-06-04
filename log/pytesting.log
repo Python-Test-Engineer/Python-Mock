@@ -1,8 +1,0 @@
-2024-06-01 13:07:40 [   DEBUG] [urllib3.connectionpool] Starting new HTTPS connection (1): google.com:443 (connectionpool.py:1055)
-2024-06-01 13:07:40 [   DEBUG] [urllib3.connectionpool] https://google.com:443 "GET / HTTP/1.1" 301 220 (connectionpool.py:549)
-2024-06-01 13:07:40 [   DEBUG] [urllib3.connectionpool] Starting new HTTPS connection (1): www.google.com:443 (connectionpool.py:1055)
-2024-06-01 13:07:41 [   DEBUG] [urllib3.connectionpool] https://www.google.com:443 "GET / HTTP/1.1" 200 None (connectionpool.py:549)
-2024-06-01 13:07:41 [   DEBUG] [urllib3.connectionpool] Starting new HTTPS connection (1): google.com:443 (connectionpool.py:1055)
-2024-06-01 13:07:41 [   DEBUG] [urllib3.connectionpool] https://google.com:443 "GET / HTTP/1.1" 301 220 (connectionpool.py:549)
-2024-06-01 13:07:41 [   DEBUG] [urllib3.connectionpool] Starting new HTTPS connection (1): www.google.com:443 (connectionpool.py:1055)
-2024-06-01 13:07:41 [   DEBUG] [urllib3.connectionpool] https://www.google.com:443 "GET / HTTP/1.1" 200 None (connectionpool.py:549)
