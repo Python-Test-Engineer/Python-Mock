@@ -1,11 +1,11 @@
 from unittest.mock import patch
-from pyboxen import boxen
+
+# from pyboxen import boxen
 from rich.console import Console
 
-console = Console()
-
 from variables_04 import Car  # importing Car class from variables file
-from unittest.mock import patch
+
+console = Console()
 
 
 class TestCar:
