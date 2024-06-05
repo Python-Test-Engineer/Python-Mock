@@ -38,6 +38,7 @@ Geeks = type(
     },
 )
 # https://stackoverflow.com/questions/48487093/how-arguments-in-python-decorated-functions-work - func_arg
+
 # creating objects
 obj = Geeks("constructor argument")
 print(obj.constructor_arg)
