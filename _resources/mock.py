@@ -1,4 +1,4 @@
-# mock.py
+# mock.py NonCallableMock is main class for Mock as it inherits from it
 # Test tools for mocking and patching.
 # Maintained by Michael Foord
 # Backport for other versions of Python available from
