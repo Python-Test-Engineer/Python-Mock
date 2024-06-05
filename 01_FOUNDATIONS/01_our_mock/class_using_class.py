@@ -1,3 +1,10 @@
+# This is important to know because it explains how creating a Mock and adding methods and properties to it, also returns a Mock object.
+
+# See 02_python_mock_examples tests
+
+# python .\01_FOUNDATIONS\01_our_mock\class_using_class.py
+
+
 class Person(object):
 
     def __init__(self, name, age):
