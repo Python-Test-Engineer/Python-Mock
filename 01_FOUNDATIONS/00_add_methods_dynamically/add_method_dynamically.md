@@ -4,8 +4,6 @@ https://github.com/python/cpython/blob/main/Lib/unittest/mock.py
 https://mgarod.medium.com/dynamically-add-a-method-to-a-class-in-python-c49204b85bd6
 
 
-
-
 https://igorsobreira.com/2011/02/06/adding-methods-dynamically-in-python.html
 
 Adding methods dynamically in Python
