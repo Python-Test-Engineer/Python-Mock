@@ -22,30 +22,35 @@ def classMethod(cls, arg):
 
 
 # creating class dynamically
-Geeks = type(
-    "Geeks",
-    (object,),
+Mock = type(
+    "Mock",  # name
+    (object,),  # inheritance of bases
     {
         # constructor
         "__init__": constructor,
         # data members
-        "string_attribute": "Geeks 4 geeks !",
+        "string_attribute": "Our first mock",
         "int_attribute": 1706256,
         "mock_attribute": 1000,
         # member functions
         "my_func_args": displayMethod,  # built in
         "my_class_func": classMethod,
+        "my_lambda": lambda self, arg: lambda: console.print(arg),
+        "lambda_square": lambda self, x: lambda: x * x,
     },
 )
 # https://stackoverflow.com/questions/48487093/how-arguments-in-python-decorated-functions-work - func_arg
 
 # creating objects
-obj = Geeks("constructor argument")
-print(obj.constructor_arg)
-print(obj.string_attribute)
-print(obj.int_attribute)
-print("=================")
-console.print(obj.mock_attribute)
-print("=================")
+obj = Mock("constructor argument")
+console.print(obj.constructor_arg)
+console.print(obj.string_attribute)
+console.print(obj.int_attribute)
+print("======= obj.mock_attribute =======")
+console.print("\t\t", obj.mock_attribute)
+print("======= obj.mock_attribute =======")
 obj.my_func_args("mock_arg")
-Geeks.my_class_func("Class Dynamically Created !")
+Mock.my_class_func("Class Dynamically Created !")
+obj.my_lambda("hello")()
+result = obj.lambda_square(10)()
+console.print("result is ", result)
