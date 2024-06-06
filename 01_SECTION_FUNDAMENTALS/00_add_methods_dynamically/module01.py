@@ -8,7 +8,7 @@ CONST_INT = 10
 
 def say_hello():
 
-    output = "Hello from module01.py"
+    output = f"Hello from module01.py with CONST_INT = {CONST_INT}"
     print("\n")
     print(
         boxen(
@@ -24,5 +24,7 @@ def say_hello():
     )
 
 
-if __name__ == "__main__":
-    say_hello()
+say_hello()
+
+# if __name__ == "__main__":
+#     say_hello()
