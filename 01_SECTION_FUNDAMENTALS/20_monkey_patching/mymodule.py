@@ -6,7 +6,10 @@ from pyboxen import boxen
 from rich.console import Console
 
 console = Console()
-GLOBALVAR = 1
+
+console.print("This is mymodule.py")  # note how this is printed last...
+
+GLOBAL_VAR = 1
 
 
 def foo():
