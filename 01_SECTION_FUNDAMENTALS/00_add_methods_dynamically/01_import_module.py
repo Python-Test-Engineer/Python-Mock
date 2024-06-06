@@ -26,5 +26,7 @@ sys.modules["module01"].say_hello = say_hello_patched
 console.print("Patched ID", str(id(sys.modules["module01"].say_hello))[-6:-1])
 
 console.print(
-    "[green]our patched say_hello() =>[/]", sys.modules["module01"].say_hello(), "\n\n"
+    "[green]our patched say_hello() is now =>[/]",
+    sys.modules["module01"].say_hello(),
+    "\n\n",
 )

@@ -26,11 +26,11 @@ class MockObjectBasics(TestCase):
     """Demonstates the basics of the 'Mock' class."""
 
     def test_mock(self):
-        """A Mock object is callable, and you can configure
-        this callable's return value. By default it returns
-        another Mock instance, created on first access.
-        Any arbitrary attribute access also creates & returns another
-        mock instance. This 'spreads' to form a tree of Mock objects"""
+        # A Mock object is callable, and you can configure
+        # this callable's return value. By default it returns
+        # another Mock instance, created on first access.
+        # Any arbitrary attribute access also creates & returns another
+        # mock instance. This 'spreads' to form a tree of Mock objects
 
         m = Mock()
         self.assertIsInstance(m, Mock)
@@ -50,18 +50,18 @@ class MockObjectBasics(TestCase):
         self.assertEqual(m.abcd, m.abcd)
 
     def test_return_value(self):
-        """The Mock constructor takes some optional arguments to control the Mock's behavior.
-        return_value allows you to control what is returned when the Mock is called like a function.
-        You can change it at after construction as well."""
+        # The Mock constructor takes some optional arguments to control the Mock's behavior.
+        # return_value allows you to control what is returned when the Mock is called like a function.
+        # You can change it at after construction as well.
         m = MagicMock(return_value=123)
         self.assertEqual(123, m())
         m.return_value = 345
         self.assertEqual(345, m())
 
     def test_mock_kwargs_constructor(self):
-        """In addition to the 6 supported arguments to the Mock constructor ("return_value", "side_effect", "spec", "spec_set", "wraps", and "name"),
-        arbitrary keyword arguments can be passed in, and these will be used to set attributes on child mocks after they are created.
-        One can even set attributes on child mock elements arbitrarily deep"""
+        #    In addition to the 6 supported arguments to the Mock constructor ("return_value", "side_effect", "spec", "spec_set", "wraps", and "name"),
+        #     arbitrary keyword arguments can be passed in, and these will be used to set attributes on child mocks after they are created.
+        #     One can even set attributes on child mock elements arbitrarily deep
         m = Mock(
             **{
                 "first_name": "owned",
@@ -74,9 +74,8 @@ class MockObjectBasics(TestCase):
         self.assertRaises(Exception, m.company.xyz.get_url)
 
     def test_mock_magic_methods(self):
-        """The Mock class supports replacing Python magic methods.
-        The MagicMock class (covered later) supplies useful default implementations for most of them.
-        """
+        # The Mock class supports replacing Python magic methods.
+        # The MagicMock class (covered later) supplies useful default implementations for most of them.
 
         def my_str(self):
             return "owned"
@@ -86,7 +85,7 @@ class MockObjectBasics(TestCase):
         self.assertEqual("owned", str(m))
 
     def test_mock_called(self):
-        """You can use the special "called" attribute to check that a Mock object was called"""
+        # You can use the special "called" attribute to check that a Mock object was called
         m = Mock()
         self.assertFalse(m.called)
         m()
@@ -94,13 +93,13 @@ class MockObjectBasics(TestCase):
 
 
 class MockObjectSideEffects(TestCase):
-    """Another optional argument to the Mock constructor is side_effect. It has several different use cases.
-    It can be used for dynamic return values, for making other things happen whenever
-    a mock is called, or for raising exceptions. If you give it an iterable, it will iterate over the elements in
-    that iterable as successive return values."""
+    # Another optional argument to the Mock constructor is side_effect. It has several different use cases.
+    # It can be used for dynamic return values, for making other things happen whenever
+    # a mock is called, or for raising exceptions. If you give it an iterable, it will iterate over the elements in
+    # that iterable as successive return values.
 
     def test_side_effect_with_iterable(self):
-        """Here is an example of giving an iterable as side_effect"""
+        # Here is an example of giving an iterable as side_effect
 
         m = Mock(side_effect=range(4))
         self.assertEqual(0, m())
@@ -112,7 +111,7 @@ class MockObjectSideEffects(TestCase):
         self.assertRaises(StopIteration, m)
 
     def test_side_effect_with_exception(self):
-        """You can give an Exception class or instance as a side_effect and that exception will be raised on every call"""
+        # You can give an Exception class or instance as a side_effect and that exception will be raised on every call
 
         class MyException(Exception):
             def __init__(self, detail):
@@ -132,9 +131,8 @@ class MockObjectSideEffects(TestCase):
         self.assertRaises(KeyError, m)
 
     def test_side_effect_with_callable(self):
-        """If you pass a callable as side_effect, it will be called with the same arguments
-        as the mock, and its return value will be used as the mock object's return value.
-        """
+        # If you pass a callable as side_effect, it will be called with the same arguments
+        # as the mock, and its return value will be used as the mock object's return value.
 
         def my_side_effect(mock_arg):
             if mock_arg % 2 == 0:
