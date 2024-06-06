@@ -1,0 +1,1 @@
+https://sam.hooke.me/note/2024/04/python-mock-reading-and-writing-files/

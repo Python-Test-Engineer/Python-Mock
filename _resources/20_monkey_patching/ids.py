@@ -18,7 +18,7 @@ hex_id_real = hex(id(real_full_name))[-3:]
 hex_id_fake = hex(id(FAKE_FULL_NAME))[-3:]
 console.print("\n")
 console.print(f"id of real_full_name: [green]{hex_id_real}[/]")
-# console.pring outputs differently
+# console.print outputs differently
 console.print(real_full_name("John", "Doe"))
 console.print(f"id of fake_full_name: [red]{hex_id_fake}[/]")
 console.print(FAKE_FULL_NAME("FakeFirst", "FakeLast "))

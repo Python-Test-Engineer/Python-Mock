@@ -28,9 +28,9 @@ def get_joke() -> str:
 
     if response.status_code == 200:
         joke = response.json()["value"]
-        print("--------- Requests Joke --------")
+        print("\n--------- Requests Joke --------")
         console.print(
-            "->[green]Joke from get_joke() in api_joke.py:[/]", joke, len(joke)
+            f"=> [green]Joke from get_joke() in api_joke.py:[/] '{joke}' with length: {len(joke)}"
         )
         print("--------- Requests Joke --------")
         # joke = stub["value"] # does not work as the value changes each time

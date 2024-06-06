@@ -23,7 +23,7 @@ def test_returns_correct_string(mock_open_fixture, monkeypatch):
     """Test"""
     mock_exists = Mock(return_value=True)
     monkeypatch.setattr("os.path.exists", mock_exists)
-    result: str = read_from_file("mocked_file.txt")
+    result = read_from_file("mocked_file.txt")
     mock_open_fixture.assert_called_once_with("mocked_file.txt", "r", encoding="utf-8")
     assert result == "test line"
 

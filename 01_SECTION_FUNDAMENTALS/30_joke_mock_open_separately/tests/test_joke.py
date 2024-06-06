@@ -18,7 +18,7 @@ class TestJoke(unittest.TestCase):
     def test_0100_no_patch(self):
         """no patch"""
         joke = get_joke()
-        console.print("\n->[yellow]0100 not patched[/]", joke)
+        console.print(f"\n=> [yellow]TEST 0100 not patched[/] '{joke}'")
         self.assertEqual(3, 3)
 
     @patch("src.joke.get_joke")

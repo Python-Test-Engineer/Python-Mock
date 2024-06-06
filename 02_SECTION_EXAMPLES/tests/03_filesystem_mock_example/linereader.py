@@ -7,17 +7,17 @@ from rich.console import Console
 console = Console()
 
 
-def read_from_file(filename: str) -> str:
+def read_from_file(filename):
     """Test"""
     if not os.path.exists(filename):
         raise FileNotFoundError("Bad path!")
-    infile = open(filename, "r", encoding="utf-8")
-    line = infile.readline()
-    infile.close()
+    file_contents = open(filename, "r", encoding="utf-8")
+    line = file_contents.readline()
+    file_contents.close()
     return line
 
 
-def read_from_file_using_with(filename: str) -> str:
+def read_from_file_using_with(filename):
     """Test"""
     if not os.path.exists(filename):
         raise FileNotFoundError("Bad path!")
