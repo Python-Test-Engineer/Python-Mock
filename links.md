@@ -11,3 +11,5 @@ https://sqlpad.io/tutorial/python-mock-library/  GOOD!!!
 https://github.com/pksol/pytest-mock-generator
 
 https://medium.com/@moraneus/the-art-of-mocking-in-python-a-comprehensive-guide-8b619529458f
+
+https://gist.github.com/nvgoldin/21902d19c6283922e34d33f40e69e510 - speccing
