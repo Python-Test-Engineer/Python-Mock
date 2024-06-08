@@ -73,7 +73,7 @@ console.print(globals())
 # add properties and methods dynamically to Mock
 
 setattr(Mock, "model", "a new model")
-console.print(f"Mocked property model is [green model]{Mock.model}[/]\n")
+console.print(f"Dynamically added property model is [green]{Mock.model}[/]\n")
 
 
 def new_function():
