@@ -1,7 +1,6 @@
 """Get joke request"""
 
 import requests
-from pyboxen import boxen
 from rich.console import Console
 
 console = Console()
@@ -17,8 +16,8 @@ stub = {
     "value": "Chuck Norris did not call the wrong number.You answered the wrong phone.",
 }
 
-
-def get_joke() -> str:
+# This is where get_joke() is defined
+def get_joke() :
     """get a joke"""
     # this is where get_joke() is defined
     console.print("\n->[green]in api_joke.py.getjoke()[/]")

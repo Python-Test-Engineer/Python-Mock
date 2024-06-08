@@ -17,6 +17,6 @@ class TestCar:
         # console.print("locals", locals())
         # mocking a class variable
         # provide `file_name.class_name.variable_name` as str
-        # patch where it is CALLED not DEFINED
+
         with patch("variables_01.Car.cost", 5000):
             console.print("\n\tcost of car", Car.cost)  # this prints 5000

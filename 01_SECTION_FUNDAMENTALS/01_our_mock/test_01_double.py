@@ -7,13 +7,11 @@ class Prod(object):
 
 
 class MockProd(object):
-    call_count = 0
 
     def __init__(self):
         self.database = "mock.db"
 
     def get_connection(self):
-        MockProd.call_count += 1
         return f"connection: {self.database}"
 
 
