@@ -1,11 +1,10 @@
 # import pyfiglet  # !!!!!!!!!!!
-from rich import box
-from rich.console import Console, Group
+
+from rich.console import Console
 from rich.markdown import Markdown
 from rich.panel import Panel
 from rich.text import Text
-from time import sleep
-from rich.align import Align
+
 
 console = Console()
 

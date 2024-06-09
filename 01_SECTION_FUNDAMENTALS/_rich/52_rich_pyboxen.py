@@ -13,8 +13,8 @@ console = Console()
 # PyBoXen API https://github.com/savioxavier/pyboxen?tab=readme-ov-file#-api
 
 
-console.print(f"\n[green]We need to use console.print to use Rich markup[/green]")
-console.print(f"[red]Closing tag can be just a '/' [/]")
+console.print("\n[green]We need to use console.print to use Rich markup[/green]")
+console.print("[red]Closing tag can be just a '/' [/]")
 output = "Hello World! This will be printed in a boxen"
 print("\n")
 print(

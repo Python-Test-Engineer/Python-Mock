@@ -1,6 +1,4 @@
 from unittest.mock import patch
-# from pyboxen import boxen
-
 from variables_03 import Car  # importing Car class from variables file
 from rich.console import Console
 

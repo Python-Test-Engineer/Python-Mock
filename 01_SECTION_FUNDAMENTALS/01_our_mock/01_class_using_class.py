@@ -3,7 +3,7 @@
 # This shows how a Mock can return Mock object.
 
 # This is important to know because it explains how creating a Mock and adding methods and properties to it, also returns a Mock object.
-from pyboxen import boxen
+
 from rich.console import Console
 
 console = Console()

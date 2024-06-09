@@ -1,6 +1,6 @@
 """Test File Reading"""
 
-from unittest.mock import MagicMock, Mock
+from unittest.mock import Mock
 
 import pytest
 from linereader import read_from_file

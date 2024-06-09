@@ -3,13 +3,12 @@
 import unittest
 from unittest.mock import MagicMock, patch
 
-import pytest
-from pyboxen import boxen
+from src.api_joke import get_joke
+from src.joke import len_joke
+
 from rich.console import Console
 
 console = Console()
-from src.api_joke import get_joke
-from src.joke import len_joke
 
 
 class TestJoke(unittest.TestCase):
