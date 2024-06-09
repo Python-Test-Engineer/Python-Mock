@@ -90,14 +90,13 @@ console.print(sys.modules["module01"])
 
 sys.modules["module01"].say_hello()
 
-# we now patch module01 in to return PATCHED via the lambda as an alternative way of using functions
 
-
+# we now patch module01 in to return PATCHED via the function return_mock_attribute and we can use a lambda as an alternative way of using functions
 def return_mock_attribute():
     return obj.mock_attribute
 
 
-# sys.modules["module01"].say_hello = return_mock_attribute
-sys.modules["module01"].say_hello = lambda: obj.mock_attribute
+sys.modules["module01"].say_hello = return_mock_attribute
+# sys.modules["module01"].say_hello = lambda: obj.mock_attribute
 
 console.print("our patched say_hello()..", sys.modules["module01"].say_hello(), "\n\n")
