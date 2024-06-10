@@ -35,19 +35,19 @@ def dynamic_mock_method():
 
 # we don't have to add it as an instance method but can add it to class.
 
-m.mocked_say_hello = dynamic_mock_method
-# we can add at run time too...abs
-# setattr(obj, "mocked_say_hello", dynamic_mock_method)
+# m.mocked_say_hello = dynamic_mock_method
+# we can add ot instance at run time if we want to
+setattr(m, "mocked_say_hello", dynamic_mock_method)
 
 
 # patch say_hello() to use return_mock_attribute
 sys.modules["module02"].say_hello = m.mocked_say_hello
 # original say_hello()
-console.print("Patched ID", original_id)
+console.print("ORIGINAL ID", original_id)
 console.print("our original say_hello()...", original_say_hello)
 
 # patched say_hello()
-console.print("Patched ID", str(id(sys.modules["module02"].say_hello))[-6:-1])
+console.print("PATCHED ID", str(id(sys.modules["module02"].say_hello))[-6:-1])
 console.print("our patched say_hello()...", sys.modules["module02"].say_hello(), "\n\n")
 
 
