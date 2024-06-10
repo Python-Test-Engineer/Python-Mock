@@ -1,7 +1,6 @@
 # 0 program to create class dynamically
 import sys
 import module02
-from pyboxen import boxen
 from rich.console import Console
 
 console = Console()
@@ -47,8 +46,5 @@ console.print("ORIGINAL ID", original_id)
 console.print("our original say_hello()...", original_say_hello)
 
 # patched say_hello()
-console.print("PATCHED ID", str(id(sys.modules["module02"].say_hello))[-6:-1])
-console.print("our patched say_hello()...", sys.modules["module02"].say_hello(), "\n\n")
-
-
-# console.print(globals())
+console.print("MOCKED ID", str(id(sys.modules["module02"].say_hello))[-6:-1])
+console.print("our mocked say_hello()...", sys.modules["module02"].say_hello(), "\n\n")
