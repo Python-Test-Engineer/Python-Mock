@@ -1,11 +1,10 @@
 # program to create class dynamically
 import sys
 import module02
-from pyboxen import boxen
+
 from rich.console import Console
 
 console = Console()
-
 
 # console.print(globals())
 
