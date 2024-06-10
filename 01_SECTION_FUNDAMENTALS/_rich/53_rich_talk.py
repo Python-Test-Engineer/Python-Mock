@@ -8,29 +8,13 @@ from rich.text import Text
 
 console = Console()
 
-# with console.screen(style="bold white on red") as screen:
-#     for count in range(9, 0, -1):
-#         text = Align.center(
-#             Text.from_markup(
-#                 f"[blink]Don't Panic! Talk starting in 7 seconds [/blink]\n{count}",
-#                 justify="center",
-#             ),
-#             vertical="middle",
-#         )
-#         screen.update(Panel(text))
-#         sleep(1)
-
 # intro slide
 intro_markdown_content = """
-# I am Abhishek
+# Udemy Python Mock, patch and monkeypatch
 
-- 🥑 Engineer & Aspiring Dev Advocate
-- PSF Fellow and organizer at PyCon India
-- 👨‍👩‍👧‍👦 Community first person 💛
-- 1x.engineer
-- connect: @stalwartcoder
-- blogs: dev.to/stalwartcoder
-- know more: abhishekmishra.dev/about
+- Craig West
+- Community first person 💛
+
 """
 
 # What is Rich?
@@ -85,7 +69,7 @@ slides = [
 ]
 
 
-title_text = Text("DelhiFOSS 🐍", style="bold magenta")
+title_text = Text("Udemy Python Mock", style="bold magenta")
 
 panels = [
     Panel(slide, title=title_text, expand=False, border_style="blue", padding=(1, 2))
@@ -94,77 +78,8 @@ panels = [
 
 for panel in panels:
     console.print(panel, justify="center")
-    # input("Press Enter to continue...")
 
-
-# thank_you_title = pyfiglet.figlet_format("Thank You", font="slant")
 
 thank_you_markdown_content = """
 I hope you enjoyed this introduction to Rich. Now go out there and make your CLIs more colorful and user-friendly!
-- Documentation: https://rich.readthedocs.io/
-- Project repo: https://github.com/Textualize/rich
-- Project examples: https://github.com/Textualize/rich/tree/master/examples
-- High level library - textual (https://github.com/Textualize/textual)
-- THIS TINY TALK: https://bit.ly/rich-foss
 """
-
-# thank_you_markdown = Markdown(thank_you_markdown_content)
-# thank_you_group = Group(Text(thank_you_title, style="magenta"), thank_you_markdown)
-# thank_you_panel = Panel(
-#     thank_you_group,
-#     title=Text("Thank You!", style="bold magenta"),
-#     expand=True,
-#     border_style="blue",
-#     padding=(1, 2),
-# )
-# console.print(thank_you_panel, justify="center")
-
-
-# thank_you_panel = Panel(
-#     f"[magenta]{thank_you_title}[/magenta]\n {thank_you_markdown}",
-#     title=Text("Thank You!", style="bold magenta"),
-#     expand=True,
-#     border_style="blue",
-#     padding=(1, 2),
-# )
-# thank_you_panel = Panel(
-#     f"[magenta]{thank_you_title}[/magenta]\n",
-#     expand=False,
-#     border_style="blue",
-#     padding=(1, 2),
-# )
-
-# intro_markdown = Markdown(intro_markdown_content)
-# basics_markdown = Markdown(basics_markdown_content)
-# console_markdown = Markdown(console_markdown_content)
-# thank_you_markdown = Markdown(thank_you_markdown_content)
-
-# intro_panel = Panel(
-#     intro_markdown, title=title_text, expand=False, border_style="blue", padding=(1, 2)
-# )
-# basics_panel = Panel(
-#     basics_markdown,
-#     title=Text("Rich Basics", style="bold magenta"),
-#     expand=False,
-#     border_style="blue",
-#     padding=(1, 2),
-# )
-# console_panel = Panel(
-#     console_markdown,
-#     title=Text("The Console Class", style="bold magenta"),
-#     expand=False,
-#     border_style="blue",
-#     padding=(1, 2),
-# )
-# thank_you_panel = Panel(
-#     thank_you_markdown,
-#     title=Text("Thank You!", style="bold magenta"),
-#     expand=False,
-#     border_style="blue",
-#     padding=(1, 2),
-# )
-
-# console.print(intro_panel, justify="center")
-# console.print(basics_panel, justify="center")
-# console.print(console_panel, justify="center")
-# console.print(thank_you_panel, justify="center")
