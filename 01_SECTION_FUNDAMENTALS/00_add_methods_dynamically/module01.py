@@ -24,9 +24,6 @@ def say_hello():
     )
 
 
-# say_hello()
+say_hello()
 
 # console.print(globals())
-
-# if __name__ == "__main__":
-#     say_hello()

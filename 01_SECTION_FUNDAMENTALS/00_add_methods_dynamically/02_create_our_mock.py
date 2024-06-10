@@ -1,119 +1,53 @@
 # 0 program to create class dynamically
 import sys
-import module01
+import module02
 from pyboxen import boxen
 from rich.console import Console
 
 console = Console()
 
 
-# constructor
-def my_constructor(self, arg):
-    self.constructor_arg = arg
+class Mock(object):
 
+    def __init__(self, msg):
+        self.constructor_arg = msg
 
-# method
-def my_displayMethod(self, arg):
-    console.print(arg)
+    def mocked_say_hello(self):
+        return self.constructor_arg
 
-
-# class method
-@classmethod
-def my_classMethod(cls, arg):
-    console.print(arg)
-
-
-# when we write class Mock() Python uses type to create the class:
-
-# Mock is name of class
-# (object,) is bases inherited or classes inherited
-# class_dict is dictionary of members - properties and methods
-
-# The purpose of this is to show that we can add at run time attributes to Mock by using setattr().
-
-# class Mock(object):
-#     __init__ = my_constructor
-
-#     string_attribute = "Our first mock"
-
-# Mock = type(
-#     "Mock",  # name
-#     (object,),  # inheritance of base object
-#     { a dictionary of members and properties},
-
-# creating class with type before compiling or dynamically at run time.
-Mock = type(
-    "Mock",  # name
-    (object,),  # inheritance of base object
-    {
-        # constructor
-        "__init__": my_constructor,
-        # data members
-        "string_attribute": "Our first mock",
-        "int_attribute": 1706256,
-        "mock_attribute": "PATCHED dynamically added attribute",
-        # member functions
-        "my_func_args": my_displayMethod,  # built in
-        "my_class_method": my_classMethod,
-        "my_lambda": lambda self, arg: lambda: console.print(arg),
-        "lambda_square": lambda self, x: lambda: x * x,
-    },
-)
-# https://stackoverflow.com/questions/48487093/how-arguments-in-python-decorated-functions-work - func_arg
 
 # creating objects
-obj = Mock("constructor argument")
-# print("\n")
-# console.print(obj.constructor_arg)
-# console.print(obj.string_attribute)
-# console.print(obj.int_attribute)
-# print("\n======= obj.mock_attribute =======")
-# console.print("\t", obj.mock_attribute)
-# print("======= obj.mock_attribute =======\n")
-# obj.my_func_args("mock_arg")
-# Mock.my_class_method("Class Dynamically Created !")
-# obj.my_lambda("hello")()
-# result = obj.lambda_square(10)()
-# console.print("result is ", result)
+
+obj = Mock("PATCHED")
+
+print("\n")
+
+original_id = str(id(sys.modules["module02"].say_hello))[-6:-1]
+original_say_hello = sys.modules["module02"].say_hello(
+    "[blue bold]original module02.say_hello()[/]"
+)
 
 
-console.print(globals())
-
-# add properties and methods dynamically to Mock
-
-# add property model with value "a new model"
-setattr(Mock, "model", "a new model")
-console.print(f"Dynamically added property model is [green]{Mock.model}[/]\n")
+# # let's patch module02
+# # current say_hello() function is stored in sys.modules["module02"]
+# console.print(sys.modules["module02"])
 
 
-# create a new function
-def new_function():
-
-    return "mocked function"
-
-
-# add funtion to class and it becomes a method
-setattr(Mock, "dynamic_method", new_function)
-output = Mock.dynamic_method()
-console.print(f"output is [green bold]{output}[/]\n")
-
-# let's patch module01
-# current say_hello() function is stored in sys.modules["module01"]
-console.print(sys.modules["module01"])
-sys.modules["module01"].say_hello()
-
-
-# we now patch module01.say_hello() to return PATCHED via the function return_mock_attribute and we can use a lambda as an alternative way of using functions
-# mock_attribute": "PATCHED dynamically added attribute",
 def return_mock_attribute():
-    return obj.mock_attribute
+    return "[yellow bold]MOCKED[/yellow bold]"
 
 
+obj.mocked_say_hello = return_mock_attribute
 # patch say_hello() to use return_mock_attribute
-sys.modules["module01"].say_hello = return_mock_attribute
+sys.modules["module02"].say_hello = obj.mocked_say_hello
 # sys.modules["module01"].say_hello = lambda: obj.mock_attribute
+# original say_hello()
+console.print("Patched ID", original_id)
+console.print("our original say_hello()..", original_say_hello)
 
-console.print("our patched say_hello()..", sys.modules["module01"].say_hello(), "\n\n")
+# patched say_hello()
+console.print("Patched ID", str(id(sys.modules["module02"].say_hello))[-6:-1])
+console.print("our patched say_hello()..", sys.modules["module02"].say_hello(), "\n\n")
 
 
 # console.print(globals())
