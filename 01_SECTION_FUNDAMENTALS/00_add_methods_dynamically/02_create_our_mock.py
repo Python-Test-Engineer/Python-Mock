@@ -31,8 +31,17 @@ def my_classMethod(cls, arg):
 
 # The purpose of this is to show that we can add at run time attributes to Mock by using setattr().
 
+# class Mock(object):
+#     __init__ = my_constructor
 
-# creating class dynamically
+#     string_attribute = "Our first mock"
+
+# Mock = type(
+#     "Mock",  # name
+#     (object,),  # inheritance of base object
+#     { a dictionary of members and properties},
+
+# creating class with type before compiling or dynamically at run time.
 Mock = type(
     "Mock",  # name
     (object,),  # inheritance of base object
@@ -54,49 +63,57 @@ Mock = type(
 
 # creating objects
 obj = Mock("constructor argument")
-print("\n")
-console.print(obj.constructor_arg)
-console.print(obj.string_attribute)
-console.print(obj.int_attribute)
-print("\n======= obj.mock_attribute =======")
-console.print("\t", obj.mock_attribute)
-print("======= obj.mock_attribute =======\n")
-obj.my_func_args("mock_arg")
-Mock.my_class_method("Class Dynamically Created !")
-obj.my_lambda("hello")()
-result = obj.lambda_square(10)()
-console.print("result is ", result)
+# print("\n")
+# console.print(obj.constructor_arg)
+# console.print(obj.string_attribute)
+# console.print(obj.int_attribute)
+# print("\n======= obj.mock_attribute =======")
+# console.print("\t", obj.mock_attribute)
+# print("======= obj.mock_attribute =======\n")
+# obj.my_func_args("mock_arg")
+# Mock.my_class_method("Class Dynamically Created !")
+# obj.my_lambda("hello")()
+# result = obj.lambda_square(10)()
+# console.print("result is ", result)
 
 
 console.print(globals())
 
 # add properties and methods dynamically to Mock
 
+# add property model with value "a new model"
 setattr(Mock, "model", "a new model")
 console.print(f"Dynamically added property model is [green]{Mock.model}[/]\n")
 
 
+# create a new function
 def new_function():
 
     return "mocked function"
 
 
+# add funtion to class and it becomes a method
 setattr(Mock, "dynamic_method", new_function)
 output = Mock.dynamic_method()
 console.print(f"output is [green bold]{output}[/]\n")
 
-
+# let's patch module01
+# current say_hello() function is stored in sys.modules["module01"]
 console.print(sys.modules["module01"])
-
 sys.modules["module01"].say_hello()
 
 
-# we now patch module01 in to return PATCHED via the function return_mock_attribute and we can use a lambda as an alternative way of using functions
+# we now patch module01.say_hello() to return PATCHED via the function return_mock_attribute and we can use a lambda as an alternative way of using functions
+# mock_attribute": "PATCHED dynamically added attribute",
 def return_mock_attribute():
     return obj.mock_attribute
 
 
+# patch say_hello() to use return_mock_attribute
 sys.modules["module01"].say_hello = return_mock_attribute
 # sys.modules["module01"].say_hello = lambda: obj.mock_attribute
 
 console.print("our patched say_hello()..", sys.modules["module01"].say_hello(), "\n\n")
+
+
+# console.print(globals())

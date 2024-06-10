@@ -9,6 +9,7 @@ console = Console()
 
 # console.print(globals())
 
+# console.print(sys.modules)
 console.print(sys.modules["module01"])
 
 console.print("[yellow]we can run say_hello() now from sys.modules[/]")

@@ -24,7 +24,7 @@ def say_hello():
     )
 
 
-say_hello()
+# say_hello()
 
 # console.print(globals())
 
