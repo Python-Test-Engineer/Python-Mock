@@ -1,27 +1,15 @@
-## 523 spec
+## 580 mock_add_spec
 
-https://github.com/python/cpython/blob/main/Lib/unittest/mock.py
+## 989 assert_not_called, assert_called ...
 
-```
-   def mock_add_spec(self, spec, spec_set=False):
-        """Add a spec to a mock. `spec` can either be an object or a
-        list of strings. Only attributes on the `spec` can be fetched as
-        attributes from the mock.
+## 1322 class Mock(CallableMixin, NonCallableMock):
 
-        If `spec_set` is True then only attributes on the spec can be set."""
-        self._mock_add_spec(spec, spec_set)
-```
+## 1722 start stop
 
-## 927 assert_not_called
+## 1846 patch
 
-# 1247 class Mock(CallableMixin, NonCallableMock):
+## 2327 MagicMock
 
-## 1634 start stop
-
-## 1740 patch
-
-## 2196 MagicMock
-
-# 2707 autospec
+## 2832 autospec
 
 # 2918 mock_open

@@ -1,3 +1,4 @@
+# Open in own isolated project
 
 python -m pytest -vs .\tests\test_joke.py::TestJoke::test_0100_no_patch
 
