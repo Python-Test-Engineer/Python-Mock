@@ -25,10 +25,10 @@ def say_hello():
 
 
 # Second time
-# say_hello()
+say_hello()
 
 # console.print(globals())
 
 # First time
-if __name__ == "__main__":
-    say_hello()
+# if __name__ == "__main__":
+#     say_hello()

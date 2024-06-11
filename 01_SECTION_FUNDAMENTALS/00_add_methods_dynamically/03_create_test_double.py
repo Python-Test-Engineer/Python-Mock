@@ -7,7 +7,7 @@ from rich.console import Console
 console = Console()
 
 
-class TestDouble(object):
+class TestDouble:
 
     def __init__(self, msg):
         self.constructor_arg = msg
@@ -27,17 +27,7 @@ original_say_hello = sys.modules["module02"].say_hello(
     "[blue bold]original module02.say_hello()[/]"
 )
 
-
-# # let's patch module02
-# # current say_hello() function is stored in sys.modules["module02"]
-# console.print(sys.modules["module02"])
-
-
-def return_test_double():
-    return "[yellow bold]MOCKED[/yellow bold]"
-
-
-# patch say_hello() to use return_mock_attribute
+# patch say_hello() to use obj.mocked_say_hello
 sys.modules["module02"].say_hello = obj.mocked_say_hello
 # sys.modules["module01"].say_hello = lambda: obj.mock_attribute
 # original say_hello()
@@ -51,4 +41,4 @@ console.print(
 )
 
 
-# console.print(globals())
+console.print(globals())

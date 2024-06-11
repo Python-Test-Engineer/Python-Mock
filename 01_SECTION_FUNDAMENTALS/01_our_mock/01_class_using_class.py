@@ -35,5 +35,6 @@ if __name__ == "__main__":
     console.print(
         "\n[yellow italic]add a property dynamically to Mock at run time...[/]"
     )
-    setattr(Mock, "language", "Python")
-    console.print(f"Mocked property model is [green]{Mock.language}[/]\n")
+    if 2 == 3:
+        setattr(Mock, "language", "Python")
+        console.print(f"Mocked property model is [green]{Mock.language}[/]\n")

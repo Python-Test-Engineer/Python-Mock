@@ -1,4 +1,4 @@
-# 0 program to create class dynamically
+# program to create class dynamically
 import sys
 import module02
 from rich.console import Console
@@ -6,7 +6,7 @@ from rich.console import Console
 console = Console()
 
 
-class Mock(object):
+class Mock:
 
     def __init__(self, msg):
         self.constructor_arg = msg
