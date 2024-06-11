@@ -1,14 +1,13 @@
-"""
-This test suite is intended to demonstrate sample usage of the python mock library.
-Much of this is already covered in the mock documentation, but this hopefully
-adds a few useful examples, calls out some subtleties, and addresses
-some common misunderstandings.
+# This test suite is intended to demonstrate sample usage of the python mock library.
+# Much of this is already covered in the mock documentation, but this hopefully
+# adds a few useful examples, calls out some subtleties, and addresses
+# some common misunderstandings.
 
-It is intended to be read in-order, as a primer.
-Almost like a technical blog post written as a test suite.
+# It is intended to be read in-order, as a primer.
+# Almost like a technical blog post written as a test suite.
 
-Run these tests with `python tests.py`
-"""
+# Run these tests with `python tests.py`
+
 
 from unittest import TestCase
 from unittest.mock import Mock, MagicMock
