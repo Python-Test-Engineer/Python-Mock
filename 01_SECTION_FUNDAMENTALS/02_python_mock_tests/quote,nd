@@ -1,0 +1,1 @@
+As a developer, you care more that your library successfully called the system function for ejecting a CD (with the correct arguments, etc.) as opposed to actually experiencing your CD tray open every time a test is run. (Or worse, multiple times, as multiple tests reference the eject code during a single unit-test run!)
