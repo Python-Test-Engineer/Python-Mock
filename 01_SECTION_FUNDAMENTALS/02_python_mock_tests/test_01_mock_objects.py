@@ -6,7 +6,8 @@
 # It is intended to be read in-order, as a primer.
 # Almost like a technical blog post written as a test suite.
 
-# Run these tests with `python tests.py`
+# Run these tests with:
+# `python -m pytest -vs .\01_SECTION_FUNDAMENTALS\02_python_mock_tests\test_01_mock_objects.py`
 
 
 from unittest import TestCase
