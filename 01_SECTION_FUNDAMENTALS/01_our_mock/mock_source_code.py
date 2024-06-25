@@ -3,7 +3,9 @@
 # Maintained by Michael Foord
 # Backport for other versions of Python available from
 # https://pypi.org/project/mock
+
 # https://github.com/python/cpython/blob/main/Lib/unittest/mock.py
+
 __all__ = (
     "Mock",
     "MagicMock",

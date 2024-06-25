@@ -1,6 +1,6 @@
-# We can use a the class within its class definition.abs
+# We can use a the class within its class definition.
 
-# This shows how a Mock can return Mock object.
+# This shows how a Mock (or any class) can return Mock (same class) object.
 
 # This is important to know because it explains how creating a Mock and adding methods and properties to it, also returns a Mock object.
 
@@ -32,9 +32,10 @@ if __name__ == "__main__":
     family = m.family()
     for i in family:
         print(i.greeting())
-    console.print(
-        "\n[yellow italic]add a property dynamically to Mock at run time...[/]"
-    )
-    if 2 == 3:
+
+    if 2 != 3:
+        console.print(
+            "\n[yellow italic]add a property 'language' dynamically to Mock at run time...[/]"
+        )
         setattr(Mock, "language", "Python")
         console.print(f"Mocked property model is [green]{Mock.language}[/]\n")

@@ -41,4 +41,4 @@ console.print(
 )
 
 
-console.print(globals())
+# console.print(globals())
