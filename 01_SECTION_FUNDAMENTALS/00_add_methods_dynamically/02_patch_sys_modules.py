@@ -6,9 +6,9 @@ from rich.console import Console
 
 console = Console()
 
-# console.print(globals())
+console.print(globals())
 
-# console.print(sys.modules)
+console.print(sys.modules)
 console.print(sys.modules["module02"])
 
 console.print("\n[blue]we can run say_hello() now from sys.modules[/]\n")

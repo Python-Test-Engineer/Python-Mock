@@ -27,7 +27,7 @@ def say_hello():
 # Second time
 say_hello()
 
-# console.print(globals())
+console.print(globals())
 
 # First time
 # if __name__ == "__main__":
