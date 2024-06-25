@@ -6,15 +6,6 @@ from rich.console import Console
 console = Console()
 
 
-stub = {
-    "categories": [],
-    "created_at": "2020-01-05 13:42:21.179347",
-    "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
-    "id": "d0ewqdGHQKyeyMf50RooKw",
-    "updated_at": "2020-01-05 13:42:21.179347",
-    "url": "https://api.chucknorris.io/jokes/d0ewqdGHQKyeyMf50RooKw",
-    "value": "Chuck Norris did not call the wrong number.You answered the wrong phone.",
-}
 
 # This is where get_joke() is defined
 def get_joke() :

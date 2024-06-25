@@ -10,6 +10,8 @@ from random_user import len_email
 
 console = Console()
 
+console.print(globals())
+
 
 class TestEmail(unittest.TestCase):
     """Test joke"""
@@ -21,7 +23,7 @@ class TestEmail(unittest.TestCase):
         mock_get_email.return_value = "alan@example.com"  # 16 chars
         # if we were using actual api call
         email = get_random_user()
-        console.print(f"[blue]email from api: {email['results'][0]['email']}[/]")
+        console.print(f"\n[blue]email from api: {email['results'][0]['email']}[/]")
 
         self.assertEqual(len_email(), 16)
 
@@ -37,7 +39,12 @@ class TestEmail(unittest.TestCase):
         # what we are sauing is api_random_user.get_random_user() is patched with our mock_response when we call get_random_user()
         mock_response = MagicMock()
         mock_response.status_code = 200
+        # json() === json.return_value
         mock_response.json.return_value = "alan@example.com"
+        console.print(
+            f"\n[green]mock_response.json.return_value = {mock_response.json.return_value}[/]"
+        )
+        # requests.get() === requests.get.return_value
         mock_requests.get.return_value = mock_response
         # self.assertEqual(get_random_user(), {"email": "alan@example.com"})
         assert get_random_user() == "alan@example.com"
@@ -50,9 +57,8 @@ class TestEmail(unittest.TestCase):
         mock_response = MagicMock()
         # mock_response = = MagicMock({status_code: 403}) check?
         mock_response.status_code = 403
-        # this is equivalent to mock_response.json()
-        mock_response.json.return_value = "alan@example.com"
+
+        console.print(f"\n[red]mock_response.status_code = 403[/]")
         # this is equivalent to mock_response.get()
         mock_requests.get.return_value = mock_response
         self.assertEqual(get_random_user(), "NONE")
-        # self.assertEqual(mock_response.status_code , 200)
