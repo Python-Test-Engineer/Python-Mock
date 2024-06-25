@@ -7,6 +7,7 @@ console = Console()
 class Car:
     cost = 2000
 
+    # add a property
     def __init__(self):
         # creating an instance variable
         self.insurance = 5000
@@ -15,6 +16,7 @@ class Car:
     def get_cost(cls):
         return cls.cost
 
+    # add a method
     def get_insurance(self):
         return self.insurance
 

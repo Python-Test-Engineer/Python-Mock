@@ -9,13 +9,14 @@ console = Console()
 class Car:
     cost = 2000
 
+    # add a class method
     @classmethod
     def get_cost(cls):
         return cls.cost
 
 
-print(Car.cost)  # prints 2000
-print(Car.get_cost())  # prints 2000
+console.print(Car.cost)  # prints 2000
+console.print(Car.get_cost())  # prints 2000
 
 output = f"[blue]Car.cost {Car.cost}[/]"
 output += f"\n[green]Car.get_cost() {Car.get_cost()}[/]"

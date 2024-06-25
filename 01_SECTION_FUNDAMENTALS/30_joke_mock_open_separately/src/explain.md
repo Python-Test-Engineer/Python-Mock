@@ -1,4 +1,7 @@
+## Based on https://www.youtube.com/playlist?list=PLe4mIUXfbIqaXv8kRvUqgrMREq-p5GgdV
+
 We are using mocking and the joke files have been split as such to show where we need to reference the 'get_joke' from.
+
 
 It needs to reference the module where it is CALLED not DEFINED.
 
