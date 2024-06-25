@@ -33,7 +33,7 @@ if __name__ == "__main__":
     for i in family:
         print(i.greeting())
 
-    if 2 == 3:
+    if 2 != 3:
         console.print(
             "\n[yellow italic]add a property 'language' dynamically to Mock at run time...[/]"
         )
