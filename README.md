@@ -1,7 +1,5 @@
 # Python Mock, Patch and Monkeypatch - a deep dive
 
-## Using Mocking, Patching and MonkeyPatching
-
 ### Working from the ground up
 
 - understand what we have in globals(), sys.modules, imports.
