@@ -8,13 +8,14 @@ console.print(globals()["Car"].__dict__)
 
 
 class TestCar:
-    def test_value_with_patch(self):
+
+    def test_patch_car_cost(self):
         # mocking a class variable
         # provide `file_name.class_name.attribute_name` as str
         with patch("variables_02.Car.cost", 5000):
             console.print("\nCar.cost", Car.cost)
 
-    def test_get_cost(self):
+    def test_patch_get_cost_not_cost(self):
         # mocking a class method
         # provide `file_name.class_name.attribute_name` as str
         # return_value tells the what to return for the get_cost()

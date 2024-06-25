@@ -26,5 +26,6 @@ print(
         fullwidth=True,  # sometimes does not seem to give full console width
     )
 )
-# if __name__ == "__main__":
-#     console.print("cost of car", Car.cost)  # prints 2000
+
+if __name__ == "__main__":
+    console.print("Running module as main - cost of car", Car.cost)  # prints 2000

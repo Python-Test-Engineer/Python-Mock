@@ -12,7 +12,7 @@ console.print(globals()["Car"].__dict__)
 
 class TestCar:
 
-    def test_value_with_patch(self):
+    def test_patch_car_cost(self):
         # console.print("locals", locals())
         # mocking a class variable
         # provide `file_name.class_name.variable_name` as str
