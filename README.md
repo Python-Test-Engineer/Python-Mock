@@ -1,4 +1,4 @@
-# Udemy PyTest Mock course
+# Python Mock, Patch and Monkeypatch - a deep dive
 
 ## Using Mocking, Patching and MonkeyPatching
 
@@ -6,5 +6,5 @@
 
 - understand what we have in globals(), sys.modules, imports.
 - create our own basic Mock.
-- examine standard Mock and pytest-mock.
-- with our own distributes system, test each component and once done we then feel capable of mocking it.
+- examine standard Mock and pytest-mock, using soruce code.
+- analyse a number of template examples.
