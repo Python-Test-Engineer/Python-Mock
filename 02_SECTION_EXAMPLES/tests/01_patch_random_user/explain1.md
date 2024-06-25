@@ -1,3 +1,6 @@
+Based on https://www.youtube.com/playlist?list=PLe4mIUXfbIqaXv8kRvUqgrMREq-p5GgdV
+
+
 We are using mocking and the joke files have been split as such to show where we need to reference the 'get_joke' from.
 
 We are testing lne(get_joke()) not get_joke() (yet!)
