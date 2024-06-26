@@ -29,9 +29,9 @@ class TestEmail(unittest.TestCase):
 
     # requests has a 'shape':
     #   request.get
-    #   request.get() === request.get.return_value
+    #   request.get() === mock.get.return_value
     #   request.status_code
-    #   request.json() === request.json.return_value
+    #   request.json() === mock.json.return_value
     # we will need to create a mock that has this shape...
     @patch("api_random_user.requests")
     def test_02_get_random_user(self, mock_requests):

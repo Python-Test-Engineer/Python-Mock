@@ -1,5 +1,5 @@
 # Make sure you have requests installed.
-# If not, you can install with `pip3 install requests`
+# If not, you can install with `pip install requests`
 # or `pip install requests`.
 import requests
 

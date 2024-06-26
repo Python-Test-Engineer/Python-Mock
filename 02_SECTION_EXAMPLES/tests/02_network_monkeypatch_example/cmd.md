@@ -1,2 +1,2 @@
 
-ython -m pytest -vs .\02_EXAMPLES\tests\04_network_monkeypatch_example\
+python -m pytest -vs .\02_SECTION_EXAMPLES\tests\02_network_monkeypatch_example\

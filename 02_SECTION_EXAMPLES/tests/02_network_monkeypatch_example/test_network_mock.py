@@ -7,9 +7,10 @@ from unittest.mock import MagicMock, Mock
 
 from network_mock import get_url
 
-console.print(globals())
+# console.print(globals())
 
 
+# PyTest has built in fixture of monkeypatch
 def test_api_calls_gets_result(monkeypatch):
     """Test"""
     mock_result = MagicMock()  # Mock works too

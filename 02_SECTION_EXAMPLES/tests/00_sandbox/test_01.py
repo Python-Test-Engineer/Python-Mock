@@ -1,7 +1,7 @@
-# test_client.py
 # https://dev.to/quame_jnr1/mocking-requests-in-python-2anc
+
 import unittest
-from unittest.mock import patch,Mock
+from unittest.mock import patch, Mock
 from client import ping
 
 

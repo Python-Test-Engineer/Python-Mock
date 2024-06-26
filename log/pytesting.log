@@ -1,2 +1,0 @@
-2024-06-25 19:02:44 [   DEBUG] [urllib3.connectionpool] Starting new HTTPS connection (1): randomuser.me:443 (connectionpool.py:1051)
-2024-06-25 19:02:45 [   DEBUG] [urllib3.connectionpool] https://randomuser.me:443 "GET /api/ HTTP/11" 200 None (connectionpool.py:546)

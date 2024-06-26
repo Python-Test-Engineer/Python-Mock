@@ -1,10 +1,14 @@
 """Test File Reading"""
 
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock
+from rich.console import Console
 
+console = Console()
 import pytest
 from linereader import read_from_file
 from pytest import raises
+
+# console.print(globals())
 
 
 # works with Mock rather than MagicMock in original example
@@ -12,7 +16,7 @@ from pytest import raises
 def mock_open_fixture(monkeypatch):
     """Monkeypatch"""
     mock_file = Mock()
-    mock_file.readline = Mock()
+    mock_file.readline = Mock()  # optional
     mock_file.readline.return_value = "test line"
     mock_open = Mock(return_value=mock_file)
     monkeypatch.setattr("builtins.open", mock_open)
